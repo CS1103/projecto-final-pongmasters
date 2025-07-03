@@ -79,7 +79,7 @@ public:
     }
     
     void step() override {
-        // Could implement learning rate scheduling here
+        
     }
     
     void set_learning_rate(T new_lr) { learning_rate = new_lr; }
