@@ -2,9 +2,10 @@
 # Proyecto Final 2025-1: AI Neural Network
 ## **CS2013 Programación III** · Informe Final
 
-### **Descripción**
+### *Descripción*
 
 > Desarrollar un agente de IA para jugar Pong mediante código de C++.
+> Presentación en video: [Presentacion.mp4](link)
 
 ### Contenidos
 
