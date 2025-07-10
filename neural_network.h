@@ -89,6 +89,6 @@ public:
     }
 };
 
-} // namespace utec::neural_network
+}
 
-#endif // PROG3_NN_FINAL_PROJECT_V2025_01_NEURAL_NETWORK_H
+#endif
