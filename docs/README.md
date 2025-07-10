@@ -5,7 +5,7 @@
 ### *Descripción*
 
 > Desarrollar un agente de IA para jugar Pong mediante código de C++.
-> Presentación en video: [Presentacion.mp4](link)
+> Presentación en video: [Presentacion.mp4](https://drive.google.com/drive/folders/1DUdzUqjLcqj48r-BDqpig6I3oQu94QSS?usp=sharing)
 
 ### Contenidos
 
