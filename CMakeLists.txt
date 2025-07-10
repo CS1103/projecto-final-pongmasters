@@ -1,27 +1,31 @@
-cmake_minimum_required(VERSION 3.29)
-project(pong_ai)
+cmake_minimum_required(VERSION 3.14)
+project(PongMasters CXX)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-include_directories(utec)
-include_directories(utec/agent)
-include_directories(utec/algebra)
-include_directories(utec/nn)
+include_directories(include)
 
-add_executable(pong_ai
-    src/utec/agent/EnvGym.cpp
-    src/utec/agent/PongAgent.cpp
-    utec/agent/EnvGym.h
-    utec/agent/PongAgent.h
-    utec/algebra/tensor.h
-    utec/nn/neural_network.h
-    utec/nn/nn_activation.h
-    utec/nn/nn_dense.h
-    utec/nn/nn_interfaces.h
-    utec/nn/nn_loss.h
-    utec/nn/nn_optimizer.h
-    utec/agent/State.h
-    test/test_agent_env.cpp
-    test/test_neural_network.cpp
-    test/test_tensor.cpp
+add_library(pong_core
+        tests/test_agent_env.cpp
+        include/utec/algebra/tensor.h
+        include/utec/nn/interfaces.h
+        include/utec/nn/dense.h
+        include/utec/nn/activation.h
+        include/utec/nn/optimizer.h
+        include/utec/nn/loss.h
+        include/utec/nn/neural_network.h
+        include/utec/agent/PongAgent.h
+        include/utec/agent/EnvGym.h
 )
+
+enable_testing()
+
+add_executable(test_agent_env tests/test_agent_env.cpp)
+target_link_libraries(test_agent_env pong_core)
+add_test(NAME test_agent_env COMMAND test_agent_env)
+
+add_executable(train_agent src/utec/agent/train_agent.cpp)
+target_include_directories(train_agent PRIVATE include)
+target_link_libraries(train_agent pong_core)
+add_test(NAME train_agent COMMAND train_agent)
