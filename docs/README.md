@@ -206,12 +206,7 @@ Permite que múltiples clases compartan un mismo tipo de interfaz para utilizars
   │        └── display.cpp
   └── tests
      └── test_tensor.cpp
-
   ```
-
-#### 2.6 Manual de uso y casos de prueba
-
-Los casos de prueba se encuentran en `tests/test_agent_env.cpp`. 
 ---
 
 ### 3. Ejecución
@@ -221,7 +216,6 @@ Los casos de prueba se encuentran en `tests/test_agent_env.cpp`.
 >
 > 1. Preparar datos haciendo Run a train_agent, sin esto no se podrán generar los pesos.
 > 2. Posteriormente, ejecutar el juego en `src/gameplay/main__game.cpp`.
-
 
 ---
 
