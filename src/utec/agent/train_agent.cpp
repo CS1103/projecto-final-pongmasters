@@ -106,7 +106,7 @@ int main() {
 
     net->train<MSELoss, SGD>(X, Y, epochs, batch_size, lr, decay);
 
-    std::cout << "\nPredicciones después del entrenamiento:\n";
+    std::cout << "\nPredicciones despues del entrenamiento:\n";
     auto preds_after = net->predict(X);
     for (size_t i = 0; i < 5; ++i) {
         std::cout << "Input: {" << X(i,0) << ", " << X(i,1) << ", " << X(i,2) << "} -> ";
@@ -117,7 +117,7 @@ int main() {
     std::cout << "Modelo entrenado y pesos guardados en: " << weights_path << "\n";
     auto end = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
-    std::cout << "\n\nTiempo de ejecución total: "
+    std::cout << "\n\nTiempo de ejecucion total: "
               << std::fixed << std::setprecision(3)
               << duration.count() / 1000.0 << " segundos." << std::endl;
     return 0;

@@ -33,7 +33,7 @@ int main() {
 
     int wins = 0;
     int total_episodes = 1000;
-    int min_bounce_win = 3;
+    int min_bounce_win = 1;
 
     for (int ep = 0; ep < total_episodes; ++ep) {
         auto state = env.reset();
