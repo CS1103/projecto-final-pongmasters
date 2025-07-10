@@ -1,15 +1,17 @@
 #ifndef PROG3_NN_FINAL_PROJECT_V2025_01_NEURAL_NETWORK_H
 #define PROG3_NN_FINAL_PROJECT_V2025_01_NEURAL_NETWORK_H
 
-#include "nn_activation.h"
-#include "nn_loss.h"
-#include "nn_dense.h"
-#include "nn_optimizer.h"
+#include <fstream>
+#include <stdexcept>
+#include "activation.h"
+#include "loss.h"
+#include "dense.h"
+#include "optimizer.h"
 #include <vector>
 #include <memory>
 #include <algorithm>
 
-namespace utec::neural_network {
+namespace utec::nn {
 
 template<typename T>
 class NeuralNetwork {
@@ -57,6 +59,11 @@ public:
                 LossType<T> loss(y_pred, Y_batch);
                 auto dloss = loss.loss_gradient();
 
+                if (e % 20 == 0 && i == 0) {
+                    std::cout << "[Epoch " << e << "] loss = " << loss.loss() << std::endl;
+                }
+
+
                 backward(dloss);
 
                 for (auto& layer : layers) {
@@ -87,8 +94,34 @@ public:
     Tensor<T,2> predict(const Tensor<T,2>& X) {
         return forward(X);
     }
+
+    void save_weights(const std::string& filename) const {
+        std::ofstream out(filename);
+        if (!out) throw std::runtime_error("Cannot open file for writing: " + filename);
+
+        for (const auto& layer : layers) {
+            auto* dense_ptr = dynamic_cast<Dense<T>*>(layer.get());
+            if (dense_ptr) dense_ptr->save_weights(out);
+        }
+    }
+
+    void load_weights(const std::string& filename) {
+        std::ifstream in(filename);
+        if (!in) throw std::runtime_error("Cannot open file for reading: " + filename);
+
+        for (const auto& layer : layers) {
+            auto* dense_ptr = dynamic_cast<Dense<T>*>(layer.get());
+            if (dense_ptr) dense_ptr->load_weights(in);
+        }
+    }
+
+    const std::vector<std::unique_ptr<ILayer<T>>>& get_layers() const {
+        return layers;
+    }
+
+
 };
 
-}
+} // namespace utec::neural_network
 
-#endif
+#endif // PROG3_NN_FINAL_PROJECT_V2025_01_NEURAL_NETWORK_H

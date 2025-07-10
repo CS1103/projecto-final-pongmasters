@@ -7,9 +7,9 @@
 
 #include <unordered_map>
 #include <cmath>
-#include "nn_interfaces.h"
+#include "interfaces.h"
 
-namespace utec::neural_network {
+namespace utec::nn {
 
 template<typename T>
 class SGD final : public IOptimizer<T> {

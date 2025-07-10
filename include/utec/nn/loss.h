@@ -5,10 +5,10 @@
 #ifndef PROG3_NN_FINAL_PROJECT_V2025_01_LOSS_H
 #define PROG3_NN_FINAL_PROJECT_V2025_01_LOSS_H
 
-#include "nn_interfaces.h"
+#include "interfaces.h"
 #include <cmath>
 
-namespace utec::neural_network{
+namespace utec::nn{
  
 template<typename T>
 class MSELoss final: public ILoss<T, 2> {
