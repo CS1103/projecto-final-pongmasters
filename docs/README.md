@@ -211,15 +211,7 @@ Permite que múltiples clases compartan un mismo tipo de interfaz para utilizars
 
 #### 2.6 Manual de uso y casos de prueba
 
-* **Cómo ejecutar**: `./build/neural_net_demo input.csv output.csv`
-* **Casos de prueba**:
-
-  * Test unitario de capa densa.
-  * Test de función de activación ReLU.
-  * Test de convergencia en dataset de ejemplo.
-
-> *Personalizar rutas, comandos y casos reales.*
-
+Los casos de prueba se encuentran en `tests/test_agent_env.cpp`. 
 ---
 
 ### 3. Ejecución
@@ -227,9 +219,9 @@ Permite que múltiples clases compartan un mismo tipo de interfaz para utilizars
 > **Demo de ejemplo**: [Demo.mp4](https://drive.google.com/file/d/1jKlKLhY0vVNbO012TKc3cRVyYEeE1iMs/view)
 > Pasos:
 >
-> 1. Preparar datos haciendo Run a train_agent.
-> 2. Ejecutar comando de entrenamiento.
-> 3. Evaluar resultados con script de validación.
+> 1. Preparar datos haciendo Run a train_agent, sin esto no se podrán generar los pesos.
+> 2. Posteriormente, ejecutar el juego en `src/gameplay/main__game.cpp`.
+
 
 ---
 

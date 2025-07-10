@@ -43,7 +43,7 @@ int main() {
 
         while (!done) {
             int action = agent.act(state);
-            state = env.step(action, reward, done);
+            state = env.step(action, reward, done, 0);
             total_reward += reward;
         }
 
