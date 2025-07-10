@@ -224,10 +224,10 @@ Permite que múltiples clases compartan un mismo tipo de interfaz para utilizars
 
 ### 3. Ejecución
 
-> **Demo de ejemplo**: Video/demo alojado en `docs/demo.mp4`.
+> **Demo de ejemplo**: [Demo.mp4](https://drive.google.com/file/d/1jKlKLhY0vVNbO012TKc3cRVyYEeE1iMs/view)
 > Pasos:
 >
-> 1. Preparar datos de entrenamiento (formato CSV).
+> 1. Preparar datos haciendo Run a train_agent.
 > 2. Ejecutar comando de entrenamiento.
 > 3. Evaluar resultados con script de validación.
 
