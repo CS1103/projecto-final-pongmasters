@@ -4,7 +4,7 @@
 
 ### **Descripción**
 
-> Ejemplo: Implementación de una red neuronal multicapa en C++ para clasificación de dígitos manuscritos.
+> Desarrollar un agente de IA para jugar Pong mediante código de C++.
 
 ### Contenidos
 
